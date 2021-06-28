@@ -19,16 +19,21 @@ function optionChanged(value){
                sample = element;                
             }
         });
-        var otus_ids = sample.otu_ids;
+        /*var otus_ids = sample.otu_ids;
         var sorted = otus_ids.sort((a, b) => a - b);
         var sliced = sorted.slice(0, 10);
-        console.log(sliced);
-
+        console.log(sliced);*/
+        var otus_ids = sample.otu_ids;
+        var sliced_ids = otus_ids.slice(0, 10);
+        var otus_labels = sample.otu_labels;
+        var sliced_labels = otus_labels.slice(0,10);
+        var sample_values = sample.sample_values;
+        var sv_labels = sample_values.slice(0,10);
         // Trace1 for the Greek Data
         var trace1 = {
-            x: sliced.map(object => object),
-            y: sliced.map(object => 'OTN '+object),
-            text: sliced.map(object => object),
+            x: sv_labels.map(object => object),
+            y: sliced_ids.map(object => 'OTN '+object),
+            text: sliced_labels.map(object => object),
             name: "OTU",
             type: "bar",
             orientation: "h"
