@@ -28,10 +28,10 @@ function optionChanged(value){
         var otus_labels = sample.otu_labels;
         var sliced_labels = otus_labels.slice(0,10);
         var sample_values = sample.sample_values;
-        var sv_labels = sample_values.slice(0,10);
+        var sv_sliced = sample_values.slice(0,10);
         // Trace1 for the Greek Data
         var trace1 = {
-            x: sv_labels.map(object => object),
+            x: sv_sliced.map(object => object),
             y: sliced_ids.map(object => 'OTN '+object),
             text: sliced_labels.map(object => object),
             name: "OTU",
