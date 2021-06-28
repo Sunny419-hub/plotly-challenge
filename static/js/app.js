@@ -55,6 +55,27 @@ function optionChanged(value){
         
         // Render the plot to the div tag with id "plot"
         Plotly.newPlot("bar", data2, layout);
+
+        var trace1 = {
+            x: sample.otu_ids.map(object => object),
+            y: sample.sample_values.map(object => object),
+            mode: 'markers',
+            marker:{ 
+                size: sample.sample_values,
+                color: sample.otu_ids
+            }
+          };
+          
+          data2 = [trace1];
+          
+          layout = {
+            title: 'Marker Size',
+            showlegend: false,
+            height: 600,
+            width: 600
+          };
+          
+          Plotly.newPlot('bubble', data2, layout);
     });
     
 }
