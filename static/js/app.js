@@ -19,12 +19,15 @@ function optionChanged(value){
                sample = element;                
             }
         });
-        alert(sample.id);
+        var otus_ids = sample.otu_ids;
+        var sorted = otus_ids.sort((a, b) => b - a);
+        var sliced = sorted.slice(0, 10);
+        console.log(sliced);
     });
     
 }
 
 function filterSample(values){
-    var select = d3.select('#selDataset');
+    
     return values.samples.id = select.node().value;
 }
