@@ -88,7 +88,38 @@ function optionChanged(value){
         for (const [key, value] of Object.entries(sample)) {
             div.append('p').text(key+': ' +value+'\n');
         }
-        
+        var data = [
+            {
+              domain: { x: [0, 1], y: [0, 1] },
+              value: sample.wfreq,
+              title: { text: "Speed" },
+              type: "indicator",
+              mode: "gauge+number+delta",
+              delta: { reference: 380 },
+              gauge: {
+                axis: { range: [null, 9] },
+                steps: [
+                  { range: [0, 1], color: "aliceblue" },
+                  { range: [1, 2], color: "antiquewhite" },
+                  { range: [2, 3], color: "aqua" },
+                  { range: [3, 4], color: "aquamarine" },
+                  { range: [4, 5], color: "azure" },
+                  { range: [5, 6], color: "bisque" },
+                  { range: [6, 7], color: "blanchedalmond" },
+                  { range: [7, 8], color: "blue" },
+                  { range: [8, 9], color: "blueviolet" },
+                ],
+                threshold: {
+                  line: { color: "red", width: 4 },
+                  thickness: 0.75,
+                  value: 490
+                }
+              }
+            }
+          ];
+          
+          var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+          Plotly.newPlot('gauge', data, layout);
     });
     
 }
