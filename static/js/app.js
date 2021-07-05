@@ -88,7 +88,7 @@ function optionChanged(value){
             {
               domain: { x: [0, 1], y: [0, 1] },
               value: sample.wfreq,
-              title: { text: "Speed" },
+              title: { text: "Belly Button Washing Frecuency" },
               type: "indicator",
               mode: "gauge+number",
               gauge: {
