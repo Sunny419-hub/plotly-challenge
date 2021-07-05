@@ -94,25 +94,24 @@ function optionChanged(value){
               value: sample.wfreq,
               title: { text: "Speed" },
               type: "indicator",
-              mode: "gauge+number+delta",
-              delta: { reference: 380 },
+              mode: "gauge+number",
               gauge: {
                 axis: { range: [null, 9] },
                 steps: [
-                  { range: [0, 1], color: "aliceblue" },
-                  { range: [1, 2], color: "antiquewhite" },
-                  { range: [2, 3], color: "aqua" },
-                  { range: [3, 4], color: "aquamarine" },
-                  { range: [4, 5], color: "azure" },
-                  { range: [5, 6], color: "bisque" },
-                  { range: [6, 7], color: "blanchedalmond" },
-                  { range: [7, 8], color: "blue" },
-                  { range: [8, 9], color: "blueviolet" },
+                  { range: [0, 1], color: "#e5ffff" },
+                  { range: [1, 2], color: "#c0ecf6" },
+                  { range: [2, 3], color: "#94d8ec" },
+                  { range: [3, 4], color: "#60c5e3" },
+                  { range: [4, 5], color: "#35b1d3" },
+                  { range: [5, 6], color: "#279dbe" },
+                  { range: [6, 7], color: "#1789a9" },
+                  { range: [7, 8], color: "#007594" },
+                  { range: [8, 9], color: "#00769b" },
                 ],
                 threshold: {
-                  line: { color: "red", width: 4 },
+                  line: { color: "#2112ad", width: 4 },
                   thickness: 0.75,
-                  value: 490
+                  value: sample.wfreq
                 }
               }
             }
