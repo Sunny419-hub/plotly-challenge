@@ -20,10 +20,6 @@ function optionChanged(value){
                sample = element;                
             }
         });
-        /*var otus_ids = sample.otu_ids;
-        var sorted = otus_ids.sort((a, b) => a - b);
-        var sliced = sorted.slice(0, 10);
-        console.log(sliced);*/
         var otus_ids = sample.otu_ids;
         var sliced_ids = otus_ids.slice(0, 10);
         var otus_labels = sample.otu_labels;
@@ -70,10 +66,10 @@ function optionChanged(value){
           data2 = [trace1];
           
           layout = {
-            title: 'Marker Size',
+            title: 'Bacteria Cultures Per Sample',
             showlegend: false,
             height: 600,
-            width: 600
+            width: 1200
           };
           
           Plotly.newPlot('bubble', data2, layout);
