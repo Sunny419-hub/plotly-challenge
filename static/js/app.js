@@ -13,7 +13,7 @@ d3.json('data/samples.json').then((data) => {
 function optionChanged(value){
     console.log(value);
     var sample = '';
-    var metadata= '';
+    
     d3.json('data/samples.json').then((data) => {
         data.samples.forEach(element => {            
             if(element.id == value){
@@ -74,6 +74,7 @@ function optionChanged(value){
           
           Plotly.newPlot('bubble', data2, layout);
     });
+
     d3.json('data/samples.json').then((data) => {
         data.metadata.forEach(element => {            
             if(element.id == value){
@@ -81,6 +82,7 @@ function optionChanged(value){
             }
         });
         var div = d3.select("#sample-metadata");
+        div.html("");
         for (const [key, value] of Object.entries(sample)) {
             div.append('p').text(key+': ' +value+'\n');
         }
